@@ -36,8 +36,8 @@ alerta_severity_options: |
       'critical': 1,
       'warning': 4,
       'indeterminate': 5,
-      'ok': 5,
+      'okay': 5,
       'unknown': 9
   }
-  DEFAULT_NORMAL_SEVERITY = 'ok'
+  DEFAULT_NORMAL_SEVERITY = 'okay'
   DEFAULT_PREVIOUS_SEVERITY = 'indeterminate'
