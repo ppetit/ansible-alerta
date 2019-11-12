@@ -12,6 +12,7 @@ alerta_pip_base_packages:
 
 alerta_pip_depend_packages:
   - uwsgi
+  - pymongo
 
 alerta_pip_plugins_packages: []
 
