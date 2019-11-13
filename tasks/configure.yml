@@ -16,8 +16,3 @@
     dest: /etc/alertad.conf
   notify: restart alerta
 
-- name: Create a systemd configuration file for the alerta
-  copy:
-    src: alerta.service
-    dest: /etc/systemd/system/alerta.service
-  notify: restart alerta

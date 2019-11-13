@@ -3,13 +3,12 @@
     path: '{{ alerta_web_ui_dir }}'
     state: directory
 
-
 - name: download alerta web console archive
   become: false
   get_url:
     url: "{{alerta_web_console_download_url}}{{ alerta_web_console_version }}/alerta-webui.tar.gz"
-    dest: "/tmp/alerta_web_console/{{ alerta_web_console_version }}/alerta-webui.tgz"
-    checksum: "sha256:{{ alerta_web_console_checksum | default(omit) }}"
+    dest: "/tmp/alerta-webui.tar.gz"
+    checksum: "{{ alerta_web_console_checksum | default(omit) }}"
     url_username: "{{ alerta_web_console_download_auth.username | default(omit) }}"
     url_password: "{{ alerta_web_console_download_auth.password | default(omit) }}"
     validate_certs: "{{ alerta_web_console_download_auth.validate_certs | default(True) }}"
@@ -24,8 +23,8 @@
 
 - name: propagate alerta web console archive
   copy:
-    src: "/tmp/alerta_web_console/{{ alerta_web_console_version }}/alerta-webui.tgz"
-    dest: "/tmp/alerta_web_console/{{ alerta_web_console_version }}/alerta-webui.tgz"
+    src: "/tmp/alerta-webui.tar.gz"
+    dest: "/tmp/alerta-webui.tgz"
     mode: 0755
     owner: root
     group: root
@@ -33,7 +32,7 @@
 - name: unpack alerta web console
   become: false
   unarchive:
-    src: "/tmp/alerta_web_console/{{ alerta_web_console_version }}/alerta-webui.tgz"
+    src: "/tmp/alerta-webui.tgz"
     dest: "{{ alerta_web_ui_dir }}"
     remote_src: true
     extra_opts: ['--strip-components=1']
