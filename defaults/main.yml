@@ -1,5 +1,4 @@
 ---
-
 alerta_base_dir: /opt/alerta
 alerta_web_ui_dir: /opt/alerta/app
 alerta_socket_path: /tmp/uwsgi.sock
@@ -15,7 +14,7 @@ alerta_pip_depend_packages:
   - pymongo
 
 alerta_pip_plugins_packages: []
-
+alerta_web_console_download_url: "https://github.com/alerta/alerta-webui/releases/download/v"
 alerta_web_console_version: 7.3.1
 
 alerta_enable_plugins: []

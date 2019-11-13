@@ -16,9 +16,9 @@
 
 - name: Define alerta_pip_packages
   set_fact:
-    alerta_pip_packages: '{{ alerta_pip_base_packages +
+    alerta_pip_packages: "{{ alerta_pip_base_packages +
                              alerta_pip_depend_packages +
-                             alerta_pip_plugins_packages }}'
+                             alerta_pip_plugins_packages }}"
 
 - import_tasks: install.yml
 
