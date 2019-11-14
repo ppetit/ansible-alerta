@@ -2,7 +2,7 @@
 Description=Alerta Service
 
 [Service]
-ExecStart=/opt/alerta/bin/uwsgi --ini /etc/uwsgi.ini
+ExecStart={{ alerta_base_dir }}/bin/uwsgi --ini /etc/uwsgi.ini
 
 [Install]
 WantedBy=multi-user.target

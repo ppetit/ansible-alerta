@@ -3,7 +3,7 @@
 BASE_URL = '{{ alerta_base_url }}'
 
 {% if alerta_enable_plugins is defined and alerta_enable_plugins | length %}
-PLUGINS = {{ alerta_enable_plugins }}
+PLUGINS = {{ alerta_enable_plugins | list }}
 {% endif %}
 
 LOG_FILE = '/var/log/alerta.log'
