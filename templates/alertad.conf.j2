@@ -2,8 +2,8 @@
 
 BASE_URL = '{{ alerta_base_url }}'
 
-{% if alerta_enable_plugins is defined and alerta_enable_plugins | length %}
-PLUGINS = {{ alerta_enable_plugins | list }}
+{% if alerta_enabled_plugins is defined and alerta_enabled_plugins | length %}
+PLUGINS = {{ alerta_enabled_plugins | list }}
 {% endif %}
 
 LOG_FILE = '/var/log/alerta.log'
@@ -17,8 +17,13 @@ ADMIN_USERS = {{ alerta_admin_users }}
 {%  if alerta_allowed_email_domains is defined and alerta_allowed_email_domains | length %}
 ALLOWED_EMAIL_DOMAINS = {{ alerta_allowed_email_domains }}
 {%  endif %}
+{%  if alerta_allowed_environements is defined and alerta_allowed_environments | length %}
+ALLOWED_ENVIRONMENTS = {{ alerta_allowed_environments }}
+{%  endif %}
 {% endif %}
 
 {{ alerta_severity_options }}
+
+{{ alerta_color_options }}
 
 {{ alerta_extra_conf_options }}

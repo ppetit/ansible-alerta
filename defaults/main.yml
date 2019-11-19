@@ -17,9 +17,9 @@ alerta_pip_plugins_packages: []
 alerta_web_console_download_url: "https://github.com/alerta/alerta-webui/releases/download/v"
 alerta_web_console_version: 7.3.1
 
-alerta_enable_plugins: []
-# - prometheus
-# - customtimeout
+alerta_enabled_plugins: []
+
+alerta_allowed_environments: []
 
 alerta_auth_required: false
 alerta_secretkey: ''
@@ -41,3 +41,15 @@ alerta_severity_options: |
   }
   DEFAULT_NORMAL_SEVERITY = 'okay'
   DEFAULT_PREVIOUS_SEVERITY = 'indeterminate'
+
+  alerta_color_options: |
+    COLOR_MAP = {
+      'severity': {
+          'fatal': 'blue',
+          'critical': 'red',
+          'warning': '#1E90FF',
+          'indeterminate': 'lightblue',
+          'ok': '#00CC00',
+          'unknown': 'silver'
+      }
+  }
