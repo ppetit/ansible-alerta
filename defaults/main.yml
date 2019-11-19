@@ -42,14 +42,14 @@ alerta_severity_options: |
   DEFAULT_NORMAL_SEVERITY = 'okay'
   DEFAULT_PREVIOUS_SEVERITY = 'indeterminate'
 
-  alerta_color_options: |
-    COLOR_MAP = {
-      'severity': {
-          'fatal': 'blue',
-          'critical': 'red',
-          'warning': '#1E90FF',
-          'indeterminate': 'lightblue',
-          'ok': '#00CC00',
-          'unknown': 'silver'
-      }
+alerta_color_options: |
+  COLOR_MAP = {
+    'severity': {
+        'fatal': 'blue',
+        'critical': 'red',
+        'warning': '#1E90FF',
+        'indeterminate': 'lightblue',
+        'ok': '#00CC00',
+        'unknown': 'silver'
+    }
   }
