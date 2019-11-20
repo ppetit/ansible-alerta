@@ -31,6 +31,7 @@ alerta_allowed_email_domains: []
 # - example.com
 
 alerta_extra_conf_options: ''
+alerta_prometheus_options: ''
 alerta_severity_options: |
   SEVERITY_MAP = {
       'critical': 1,
