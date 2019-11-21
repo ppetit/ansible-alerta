@@ -3,7 +3,6 @@ chdir = {{ alerta_base_dir }}
 mount = {{ alerta_base_url }}=wsgi.py
 callable = app
 manage-script-name = true
-env = BASE-URL=/api
 master = true
 processes = 5
 logger = syslog:alertad

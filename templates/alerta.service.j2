@@ -1,8 +1,15 @@
 [Unit]
-Description=Alerta Service
+Description= uWSGI service for Alerta
+After=syslog.target
 
 [Service]
 ExecStart={{ alerta_base_dir }}/bin/uwsgi --ini /etc/uwsgi.ini
+RuntimeDirectory=uwsgi
+Restart=always
+KillSignal=SIGQUIT
+Type=notify
+StandardError=syslog
+NotifyAccess=all
 
 [Install]
 WantedBy=multi-user.target

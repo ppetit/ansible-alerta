@@ -26,8 +26,8 @@
     src: "/tmp/alerta-webui.tar.gz"
     dest: "/tmp/alerta-webui.tgz"
     mode: 0755
-    owner: root
-    group: root
+    owner: "{{ alerta_web_user }}"
+    group: "{{ alerta_web_user }}" 
 
 - name: unpack alerta web console
   become: false
@@ -36,6 +36,8 @@
     dest: "{{ alerta_web_ui_dir }}"
     remote_src: true
     extra_opts: ['--strip-components=1']
+    owner: "{{ alerta_web_user }}"
+    group: "{{ alerta_web_user }}"
   check_mode: false
 
 - name: Configure alerta web console

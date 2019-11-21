@@ -20,6 +20,17 @@
                              alerta_pip_depend_packages +
                              alerta_pip_plugins_packages }}"
 
+- name: Create required directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ alerta_web_user }}"
+    group: "{{ alerta_web_user }}"
+  with_items:
+    - "{{ alerta_base_dir }}"
+    - "{{ alerta_socket_path | dirname }}"
+    - "/var/log/alerta/"
+
 - import_tasks: install.yml
 
 - import_tasks: configure.yml
