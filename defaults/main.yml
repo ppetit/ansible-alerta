@@ -61,9 +61,9 @@ alerta_color_options: |
         'debug': 'purple',
         'trace': 'grey',
         'indeterminate': 'silver',
-        'cleared: 'green',
-        'normal: 'green',
-        'ok: 'green',
+        'cleared': 'green',
+        'normal': 'green',
+        'ok': 'green',
         'unknown': 'grey'
     }
   }
