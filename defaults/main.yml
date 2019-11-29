@@ -34,12 +34,18 @@ alerta_extra_conf_options: ''
 alerta_prometheus_options: ''
 alerta_severity_options: |
   SEVERITY_MAP = {
-      'fatal': 0,
       'critical': 1,
+      'major': 2,
+      'minor': 3,
       'warning': 4,
-      'indeterminate': 5,
-      'ok': 5,
-      'unknown': 9
+      'informational': 5,
+      'debug': 6,
+      'trace': 7,
+      'indeterminate': 8,
+      'cleared': 9,
+      'normal': 9,
+      'ok': 9,
+      'unknown':10 
   }
   DEFAULT_NORMAL_SEVERITY = 'ok'
   DEFAULT_PREVIOUS_SEVERITY = 'indeterminate'
@@ -47,11 +53,17 @@ alerta_severity_options: |
 alerta_color_options: |
   COLOR_MAP = {
     'severity': {
-        'fatal': 'red',
-        'critical': 'purple',
-        'warning': 'orange',
-        'indeterminate': 'lightblue',
+        'critical': 'red',
+        'major': 'orange',
+        'minor': 'yellow',
+        'warning': 'blue',
+        'informational': 'green',
+        'debug': 'purple',
+        'trace': 'grey',
+        'indeterminate': 'silver',
+        'cleared: 'green',
+        'normal: 'green',
         'ok: 'green',
-        'unknown': 'silver'
+        'unknown': 'grey'
     }
   }
